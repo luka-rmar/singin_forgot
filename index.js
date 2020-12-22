@@ -13,14 +13,6 @@ function toogleImage(event){
    
 }
 
-addEventListener("resize", event => {
-  let boxFormMobile = document.getElementsByClassName("container-form_box-form")
-
-  console.log(event.currentTarget.innerWidth)
-
-  if(event.currentTarget.innerWidth > 700) boxFormMobile[0].style.left = 0;
-  
-})
 
 const signup = document.getElementById("link_singup");
 const signin = document.getElementById("link_singin");

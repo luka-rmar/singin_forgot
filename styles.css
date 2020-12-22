@@ -7,16 +7,21 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 section {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(
+  background: #2c4c74;
+  /* background: linear-gradient(
     156deg,
     rgba(223, 101, 83, 1) 17%,
     rgba(50, 83, 166, 1) 70%
-  );
+  ); */
 
   display: flex;
   justify-content: center;
@@ -29,16 +34,14 @@ section .container {
 
   width: 720px;
   height: 450px;
-  background: #fff;
   box-shadow: 0px 0px 32px -3px rgba(0,0,0,0.47);
 }
 
 section .container .container-form {
   display: flex;
   align-items: center;
-  background: #fff;
-
   height: 100%;
+  background: #fff;
 
   transition: all 0.4s;
 
@@ -51,7 +54,6 @@ section .container .container_box-image {
   height: 100%;
 
   left: 0;
-  top: 0;
 
   transition: .5s;
 
@@ -69,8 +71,6 @@ section .container .container-form .container-form_box-form {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  background: #fff;
 
   width: 100%;
   height: 100%;
@@ -106,15 +106,14 @@ section .container .container-form .container-form_box-form form {
   height: 100%;
 }
 
-section .container .container-form .container-form_box-form form h2{
-  font-size: 18px;
+section .container .container-form .container-form_box-form form h1{
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 2px;
   text-align: center;
   width: 100%;
   margin-bottom: 10px;
-  color: #555
+  color: #1c4c74;
 }
 
 section .container .container-form .container-form_box-form form input {
@@ -138,7 +137,7 @@ section .container .container-form .container-form_box-form form button {
   padding: 10px;
   margin-top: 8px;
 
-  background: rgba(223, 101, 83, 1);
+  background: #f76345;
   color: #fff;
   font-size: 14px;
   font-weight: 500;
@@ -156,10 +155,9 @@ section .container .container-form .container-form_box-form form .signup {
   margin-top: 20px;
   font-size: 12px;
   letter-spacing: 1px;
-  color: #555;
+  color: #1c4c74;
   text-transform: uppercase;
   text-align: center;
-  font-weight: 300;
 }
 
 section .container .container-form .container-form_box-form form a {
@@ -168,9 +166,10 @@ section .container .container-form .container-form_box-form form a {
 
   font-weight: 600;
   text-decoration: none;
-  color: rgba(223, 101, 83, 1);
+  color: #f76345;
   text-align: center;
   font-size: 14px;
+  letter-spacing: 1px;
 }
 
 
