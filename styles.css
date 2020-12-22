@@ -21,67 +21,92 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-
 }
 
 section .container {
   position: relative;
   overflow: hidden;
 
-  width: 800px;
-  height: 500px;
+  width: 720px;
+  height: 450px;
   background: #fff;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 32px -3px rgba(0,0,0,0.47);
 }
 
-section .container .user {
+section .container .container-form {
+  display: flex;
+  align-items: center;
+  background: #fff;
+
+  height: 100%;
+
+  transition: all 0.4s;
+
+}
+
+section .container .container_box-image {
   position: absolute;
   display: flex;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-section .container .user .box-image {
-  position: relative;
   width: 50%;
   height: 100%;
+
+  left: 0;
+  top: 0;
+
   transition: .5s;
+
+  z-index: 1;
 }
 
-section .container .user .box-image img {
-  position: absolute;
-  top: 0;
-  left: 0;
+section .container .container_box-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-section .container .user .box-form {
+section .container .container-form .container-form_box-form {
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-
-  width: 50%;
-  height: 100%;
-  padding: 40px;
 
   background: #fff;
 
-  transition: 0.5s;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+
+  transition: 0.6s;
   
 }
 
-section .container .user .box-form form {
-  display: flex;
-  flex-direction: column;
+
+section .container .container-form .container-form_box-form .container-form_box-image {
+  width: 100px;
+  height: 100px;
+
+  display: none;
+
+  margin-bottom: 25px;
 }
 
-section .container .user .box-form form h2{
+section .container .container-form .container-form_box-form .container-form_box-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+section .container .container-form .container-form_box-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+section .container .container-form .container-form_box-form form h2{
   font-size: 18px;
   font-weight: 600;
   text-transform: uppercase;
@@ -92,24 +117,26 @@ section .container .user .box-form form h2{
   color: #555
 }
 
-section .container .user .box-form form input {
+section .container .container-form .container-form_box-form form input {
   position: relative;
   width: 100%;
   padding: 10px;
   background: #f5f5f5;
-  color: #333;
   border: none;
   outline: none;
-  box-shadow: none;
   margin: 8px 0;
+  border-radius: 3px;
+  
+  color: #333;
   font-size: 14px;
   letter-spacing: 1px;
   font-weight: 300;
 }
 
-section .container .user .box-form form button {
+section .container .container-form .container-form_box-form form button {
   width: 100%;
   padding: 10px;
+  margin-top: 8px;
 
   background: rgba(223, 101, 83, 1);
   color: #fff;
@@ -121,64 +148,58 @@ section .container .user .box-form form button {
   border: none;
   border-radius: 3px;
   outline: none;
-  box-shadow: none;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
 }
 
-section .container .user .box-form form .signup {
+section .container .container-form .container-form_box-form form .signup {
   position: relative;
   margin-top: 20px;
   font-size: 12px;
   letter-spacing: 1px;
   color: #555;
   text-transform: uppercase;
+  text-align: center;
   font-weight: 300;
 }
 
-section .container .user .box-form form .signup a {
+section .container .container-form .container-form_box-form form a {
+  width: auto;
+  align-self: center;
+
   font-weight: 600;
   text-decoration: none;
-  color: rgba(223, 101, 83, 1)
+  color: rgba(223, 101, 83, 1);
+  text-align: center;
+  font-size: 14px;
 }
 
-section .container .box-singup {
-  pointer-events: none;
-}
 
-section .container.activate .box-singup {
-  pointer-events: initial;
-}
+@media(max-width: 740px) {
 
-section .container .box-singup .box-form {
-  left: 100%;
-}
-
-section .container.activate .box-singup .box-form {
-  left: 0;
-  animation: animateRigth 0.1s ease;
-
-}
-
-section .container .box-singup .box-image{
-  left: -50%;
-}
-
-section .container.activate .box-singup .box-image{
-  left: 0;
-}
-
-section .container.activate .box-singin .box-image{
-  opacity: 0 ;
-  transition: 0.4s;
-}
-
-@keyframes animateRigth {
-
-  0% {
-    opacity:1;
-    
+  section .container {
+    width: 360px;
   }
 
-  50%, 100% {
-    opacity: 0;
+  section .container .container_box-image {
+    display: none;
+  }
+
+  section .container .container-form .container-form_box-form .container-form_box-image {
+    display: inline-block;
+  }
+
+  section .container .container-form .container-form_box-form form {
+    justify-content: normal;
+  }
+ 
+  section .container .container-form {
+   position: absolute;
+   flex-direction: row-reverse; 
+
+   left: 0;
+   width: 720px;
+
+   transition: 0.4s;
+  
   }
 }

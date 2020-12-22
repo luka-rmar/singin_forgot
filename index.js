@@ -1,12 +1,29 @@
-function toogleForm(event){
-  event.preventDefault();
+function toogleImage(event){  
+  let transitionLink = event.target.id;
+  let containerImage = document.querySelector(".container_box-image");
+  let boxFormMobile = document.querySelector(".container-form")
+ 
+  if(innerWidth > 740) {
 
-  let container = document.querySelector(".container");
-  container.classList.toggle("activate")
+    containerImage.style.left = transitionLink === "link_singup" ? "50%" : 0;
+
+  } else {
+    boxFormMobile.style.left = transitionLink === "link_singup" ? "-100%" : 0;
+   }
+   
 }
 
-let signup = document.getElementById("link_singup");
-let signin = document.getElementById("link_singin");
+addEventListener("resize", event => {
+  let boxFormMobile = document.getElementsByClassName("container-form_box-form")
 
-signup.addEventListener("click", toogleForm)
-signin.addEventListener("click", toogleForm)
+  console.log(event.currentTarget.innerWidth)
+
+  if(event.currentTarget.innerWidth > 700) boxFormMobile[0].style.left = 0;
+  
+})
+
+const signup = document.getElementById("link_singup");
+const signin = document.getElementById("link_singin");
+
+signup.addEventListener("click", toogleImage)
+signin.addEventListener("click", toogleImage)
